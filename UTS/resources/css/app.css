@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.wrapper {
+    display: flex;
+    flex: 1;
+    transition: margin-left 0.3s ease-in-out;
+}
+#default-sidebar {
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 40;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16rem;
+    height: 100vh;
+    background-color: #3b82f6; /* Tailwind bg-blue-500 */
+}
+#default-sidebar.open {
+    transform: translateX(0);
+}
+#main-content {
+    flex: 1;
+    transition: margin-left 0.3s ease-in-out;
+    padding: 1rem;
+    margin-left: 0;
+}
+#header, #footer {
+    transition: margin-left 0.3s ease-in-out;
+}
+#header {
+    z-index: 30;
+    overflow: hidden;
+    transition: margin-left 0.3s ease-in-out, padding-right 0.3s ease-in-out;
+}
+#header .max-w-screen-xl {
+    padding-right: 2rem; /* Sesuaikan padding jika perlu */
+}
